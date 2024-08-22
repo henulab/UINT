@@ -15,12 +15,13 @@ meeting the latency and interarrival requirements of different traffic types.
 .
 ├── dataset: the snip dataset.
 ├── cases: cases used in this work.
-├── metrics: code for metrics.
-├── schedulers: schedulers implementations.
-├── simulator: heterogeneous GPU cluster simulator.
-├── config.json: configuration file.
-├── main.go: entry point.
-└── util: helper codes.
+├── scripts: script file in simulation experiment.
+├── category.py: classification tree class.
+├── main.py: the main function.
+├── predict.py: model reading and prediction class.
+├── report.py: print evaluation report.
+├── utils.py: helper codes.
+└── topology.py: network topology.
 
 ```
 ## The Architecture of UNIT
@@ -116,7 +117,7 @@ Experiment.</div>
 #### step3: Open terminals S1 and T2 ```xterm S1 T2```.
 #### step4: As the traffic sender, S1 runs the Mgen script file ```mgen input test_input.mgn```.
 #### step5: As the traffic receiver, T1 runs the Mgen script file ```mgen input test_listen.mgn output test_output.drc```.
-#### step6: Use bmon to monitor the network bandwidth in real time and write to the bandwidth.txt file ```bmon -b -p h2-eth0 -o ascii | tee bandwidth.txt```. And then Use data.py to extract bandwidth data from the bandwidth.txt file ```python3 data.py```.
+#### step6: Use bmon to monitor the network bandwidth in real time and write to the bandwidth.txt file ```./scripts/bmon.sh```. And then Use data.py to extract bandwidth data from the bandwidth.txt file ```python3 data.py```.
 #### step7: At the same time, monitor network traffic in real time using ```nload```.
 #### step7: Use trpr to analyze information such as delay and interarrival according to the monitored information. ```../trpr interarrival drec input test_output.drc auto X output late.txt``` and ```../trpr latency drec input test_output.drc auto X output late.txt```.
 #### step8: Plot using gunplot ```gunplot gunplot.txt```.
