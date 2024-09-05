@@ -72,18 +72,6 @@ The processed data is shown in the folder cases.
 5. make predictions using the trained model
 ```python3 predict.py```
 
-### The performance of user-requested traffic prediction
-|       | Precision|   Recall  |  F1-score |
-| :---: |:--------:| :-------: | :-------: |
-| Audio |   0.95   |    0.96   |    0.96   |
-| Chat  |   1.00   |    0.93   |    0.96   |
-| VoIP  |   0.99   |    0.97   |    0.98   |
-| Video |   0.95   |    1.00   |    0.97   |
-| Email |   0.99   |    0.78   |    0.88   |
-| File  |   1.00   |    1.00   |    1.00   |
-| Web   |   0.99   |    0.98   |    0.99   |
-|Average|   0.98   |    0.95   |    0.96   |
-
 ## About the traffic scheduling experiments
 
 ### Environmental requirement
